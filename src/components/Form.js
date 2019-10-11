@@ -3,10 +3,13 @@ import { Avatar, Button, FormControl, FormControlLabel, Checkbox, Input, InputLa
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from './styles/FormStyles'
+import { LanguageContext } from '../contexts/LanguageContext'
 
 class Form extends Component {
+    static contextType = LanguageContext;
     state = {}
     render() {
+        const { language } = this.context;
         const { classes } = this.props;
         return (
             <main className={classes.main}>
